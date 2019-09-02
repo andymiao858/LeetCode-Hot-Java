@@ -10,9 +10,12 @@
 
 package com.rabbit;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Solution1 {
 
-    public int[] twoSum(int[] nums, int target) {
+    public int[] twoSum1(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
@@ -23,4 +26,23 @@ public class Solution1 {
         return new int[]{};
 
     }
+
+    public int[] twoSum2(int[] nums, int target) {
+        Map<Integer, Integer> hashMap = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            hashMap.put(nums[i], i);
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            int data = target - nums[i];
+            if (hashMap.containsKey(data)) {
+                return new int[] {i, hashMap.get(data)};
+            } else {
+                hashMap.put(data, i);
+            }
+        }
+        return new int[]{};
+    }
+
+
 }

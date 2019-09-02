@@ -24,17 +24,30 @@ public void after() throws Exception {
 
 /** 
 * 
-* Method: twoSum(int[] nums, int target) 
+* Method: twoSum1(int[] nums, int target)
 * 
 */ 
 @Test
-public void testTwoSum() throws Exception {
+public void testTwoSum1() throws Exception {
     Solution1 solution1 = new Solution1();
     int[] nums = {2, 9, 4, 6, 3};
-    int[] ret = solution1.twoSum(nums, 10);
+    int[] ret = solution1.twoSum1(nums, 10);
     Assert.assertTrue(ret.length == 2);
     Assert.assertArrayEquals(new int[]{2, 3}, ret);
-} 
+}
 
+/**
+ *
+ * Method: twoSum2(int[] nums, int target)
+ *
+ */
+@Test
+public void testTwoSum2() throws Exception {
+    Solution1 solution1 = new Solution1();
+    int[] nums = {2, 9, 4, 6, 3};
+    int[] ret = solution1.twoSum2(nums, 10);
+    Assert.assertTrue(ret.length == 2);
+    Assert.assertArrayEquals(new int[]{2, 3}, ret);
+}
 
-} 
+}
